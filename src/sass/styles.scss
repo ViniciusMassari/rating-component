@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$component-background: #1c232c;
+$font-color: #626973;
+$button-color: #fa7612;
+$hover-button: #fff;
+$background-color: #131519;
+
+$selected-rating: #fa7612;
+
+body {
+  background-color: $background-color;
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  background-color: $component-background;
+  width: 25rem;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-container {
+  display: block;
+}
+
+.star-container {
+  padding: 10px;
+  border-radius: 50px;
+  background-color: transparentize($font-color, 0.8);
+  width: fit-content;
+}
+
+.rating-choose {
+  h1 {
+    color: #d6dadb;
+    margin: 1rem;
+    margin-left: 0;
+    text-align: start;
+  }
+  p {
+    color: $font-color;
+    text-align: start;
+    font-size: 0.875rem;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    span {
+      color: $font-color;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: transparentize(darken($font-color, 20%), 0.5);
+      cursor: pointer;
+      transition: 0.3s;
+      &.hover {
+        background-color: lighten($font-color, 0.5);
+        color: $hover-button;
+      }
+    }
+  }
+}
+
+button {
+  background-color: $button-color;
+  font: bold 0.875rem sans-serif;
+  color: $hover-button;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+  align-self: center;
+  border-radius: 50px;
+  padding: 1rem;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background-color: $hover-button;
+    color: $button-color;
+  }
+}
+
+.rating span.active {
+  background-color: $selected-rating;
+  color: $hover-button;
+}
+
+.submitted {
+  display: none;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $component-background;
+  gap: 20px;
+
+  span {
+    padding: 10px;
+    background-color: transparentize(darken($font-color, 20%), 0.5);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: lighten($button-color, 5%);
+    margin: 1rem;
+  }
+  h2 {
+    color: $hover-button;
+  }
+  p {
+    text-align: center;
+    color: $font-color;
+  }
+}
+
+.submitted.active {
+  display: flex;
+}
+
+.error {
+  color: $button-color;
+  text-align: center;
+  display: none;
+  margin: 10px;
+}
+
+.error.active {
+  display: block;
+}
