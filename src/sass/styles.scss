@@ -74,7 +74,7 @@ body {
   }
 }
 
-button {
+#submit {
   background-color: $button-color;
   font: bold 0.875rem sans-serif;
   color: $hover-button;
@@ -121,6 +121,8 @@ button {
     text-align: center;
     color: $font-color;
   }
+  
+
 }
 
 .submitted.active {
@@ -136,4 +138,15 @@ button {
 
 .error.active {
   display: block;
+}
+
+#backButton{
+  height: 50px;
+  width: 50px;
+  background-color: $button-color;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: bold;
+  border-color: $button-color;
+  cursor: pointer;
 }
